@@ -1,6 +1,9 @@
 package com.jjk.democratic;
 
+import com.jjk.democratic.item.Modlist;
+import com.jjk.democratic.item.ModlistTab;
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -25,7 +28,8 @@ public class JjkMod {
 
     public JjkMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
+        ModlistTab.register(modEventBus);
+        Modlist.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -43,7 +47,10 @@ public class JjkMod {
 
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(Modlist.Soul);
+            event.accept(Modlist.RUNE);
+        }
     }
 
 
