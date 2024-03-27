@@ -1,5 +1,6 @@
 package com.jjk.democratic.item;
 
+import com.jjk.democratic.Blockitem.ModBlock;
 import com.jjk.democratic.JjkMod;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -21,6 +22,8 @@ public class ModlistTab {
                         output.accept(Modlist.Soul.get());
                         output.accept(Modlist.RUNE.get());
                         output.accept(Items.DIAMOND_AXE);
+                        output.accept(Modlist.CR.get());
+                        output.accept(ModBlock.RAW_COTTON.get());
                     })
 
 

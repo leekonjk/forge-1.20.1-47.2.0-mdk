@@ -2,6 +2,7 @@ package com.jjk.democratic;
 
 import com.jjk.democratic.item.Modlist;
 import com.jjk.democratic.item.ModlistTab;
+import com.jjk.democratic.Blockitem.ModBlock;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -30,7 +31,7 @@ public class JjkMod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModlistTab.register(modEventBus);
         Modlist.register(modEventBus);
-
+        ModBlock.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
 
 

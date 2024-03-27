@@ -14,6 +14,8 @@ public class Modlist {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RUNE=ITEMS.register("rune",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CR=ITEMS.register("cr",
+    () -> new Item(new Item.Properties()));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
